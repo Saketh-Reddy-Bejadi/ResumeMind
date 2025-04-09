@@ -32,8 +32,8 @@
     </form>
 
     <!-- AI response -->
-    <div id="responseBox" class="mt-6 p-6 rounded-2xl bg-gradient-to-br from-white via-gray-100 to-white border border-gray-200 text-gray-800 shadow-sm min-h-[120px] transition-all duration-300 ease-in-out">
-      <span class="text-sm text-gray-500 italic">AI response will appear here...</span>
+    <div id="responseBox" class="mt-6 p-6 rounded-2xl bg-gradient-to-br from-white via-gray-100 to-white border border-gray-200 text-gray-800 shadow-sm min-h-[70px] transition-all duration-300 ease-in-out hidden">
+      <span class="text-sm text-gray-500 italic"></span>
     </div>
   </div>
 
@@ -119,6 +119,7 @@
       }
 
       const formData = new FormData(form);
+      responseBox.classList.remove("hidden");
       responseBox.innerHTML = `<div class="animate-pulse text-indigo-500 font-medium">Analyzing resume... Please wait.</div>`;
 
       try {
